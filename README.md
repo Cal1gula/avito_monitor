@@ -1,96 +1,75 @@
-# Avito Monitor
+# 📱 Avito Monitor
 
-Автоматический монитор объявлений Avito с уведомлениями в Telegram.
+Telegram-бот для мониторинга новых объявлений на Avito.
 
 ## Возможности
 
-- Мониторинг сразу нескольких поисковых запросов
-- Фильтрация по максимальной цене
-- Отслеживание изменения цены
-- Уведомления в Telegram
-- История изменений цен
-- Логирование
-- Хранение объявлений в SQLite
-- Экспорт новых объявлений в Excel
-- Автоматическая работа по расписанию
+- 🔍 Мониторинг нескольких поисковых запросов
+- 💰 Фильтр по максимальной цене
+- 📈 Отслеживание изменения цен
+- 📲 Уведомления в Telegram
+- 💾 Хранение объявлений в SQLite
+- 📊 Экспорт новых объявлений в Excel
+- 📝 Логирование работы
+
+---
 
 ## Стек
 
-- Python 3.12
+- Python 3
 - Playwright
 - SQLite
 - OpenPyXL
 - Telegram Bot API
 
+---
+
+## Установка
+
+```bash
+git clone https://github.com/Cal1gula/avito_monitor.git
+cd avito_monitor
+
+pip install -r requirements.txt
+playwright install
+```
+
+Создать файл `.env`
+
+```
+BOT_TOKEN=YOUR_TOKEN
+CHAT_ID=YOUR_CHAT_ID
+```
+
+Запуск
+
+```bash
+python monitor.py
+```
+
+---
+
 ## Структура проекта
 
 ```
-avito_monitor_v2/
-
-├── monitor.py
+avito_monitor/
+│
 ├── avito_parser.py
 ├── database.py
+├── monitor.py
 ├── telegram_sender.py
 ├── excel_logger.py
 ├── price_logger.py
 ├── logger.py
 ├── config.py
 ├── requirements.txt
-│
-├── data/
-│   ├── avito.db
-│   ├── new_items.xlsx
-│   └── price_history.xlsx
-│
-└── logs/
+├── README.md
+├── .env.example
+└── data/
 ```
 
-## Как установить
-
-```bash
-git clone https://github.com/USERNAME/avito_monitor.git
-
-cd avito_monitor
-
-pip install -r requirements.txt
-```
-
-## Настройка
-
-В файле `config.py` необходимо указать:
-
-- TOKEN Telegram-бота
-- CHAT_ID
-- поисковые ссылки Avito
-- максимальную цену
-- интервал проверки
-
-## Запуск
-
-```bash
-python monitor.py
-```
-
-## Пример уведомления
-
-```
-📱 iPhone 15
-
-💰 Цена: 39000 ₽
-
-📍 Москва
-
-🔗 https://www.avito.ru/...
-```
-
-## Возможности для развития
-
-- Docker
-- VPS
-- Веб-интерфейс
-- История цен в виде графиков
-- Поддержка любых категорий Avito
+---
 
 ## Автор
 
-GitHub: [https://github.com/Cal1gula]
+GitHub: https://github.com/Cal1gula
